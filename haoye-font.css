@@ -1,0 +1,9 @@
+﻿/*
+*   by haoye edit
+ */
+
+$base-font-family: "Open Sans", "Source Han Sans TC", "Noto Sans T Chinese", Helvetica, Arial, "Microsoft Jhenghei", sans-serif;
+
+.style-font {
+  font-family: $base-font-family;
+}
