@@ -1,9 +1,9 @@
 ﻿/*
-*   by haoye edit
+*   by haoye Edit Test
  */
 
 @font-face {
-  font-family: 'Noto Sans TC';
+  font-family: nstc-font;
   font-style: normal;
   font-weight: 100;
   src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Thin.woff2) format('woff2'),
@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'Noto Sans TC';
+  font-family: nstc-font;
   font-style: normal;
   font-weight: 300;
   src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Light.woff2) format('woff2'),
@@ -20,7 +20,7 @@
        url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Light.otf) format('opentype');
 }
 @font-face {
-   font-family: 'Noto Sans TC';
+   font-family: nstc-font;
    font-style: normal;
    font-weight: 400;
    src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Regular.woff2) format('woff2'),
@@ -28,7 +28,7 @@
         url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Regular.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans TC';
+   font-family: nstc-font;
    font-style: normal;
    font-weight: 500;
    src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Medium.woff2) format('woff2'),
@@ -36,7 +36,7 @@
         url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Medium.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans TC';
+   font-family: nstc-font;
    font-style: normal;
    font-weight: 700;
    src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Bold.woff2) format('woff2'),
@@ -44,7 +44,7 @@
         url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Bold.otf) format('opentype');
  }
 @font-face {
-   font-family: 'Noto Sans TC';
+   font-family: nstc-font;
    font-style: normal;
    font-weight: 900;
    src: url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Black.woff2) format('woff2'),
@@ -52,9 +52,39 @@
         url(https://github.com/kancheng/csstool-haoye/blob/master/fonts/NotoSansTC-Black.otf) format('opentype');
  }
 
-$base-font-family: 'Noto Sans TC', Arial, "Microsoft Jhenghei", sans-serif;
+@font-face {
+  font-family: haoye-font;
+  src: local(Heiti TC), local("微軟正黑體");
+  /* no unicode-range; default to all characters */
+}
+
+/* Latin characters 專用 */
+@font-face {
+  font-family: haoye-font; /* 同樣的 font-family */
+  unicode-range: U+00-024F;  /* Latin, Latin1 Sup., Ext-A, Ext-B */
+  src: local(Helvetica),     /* OS X preferred */
+       local(Arial);         /* Other OS */
+}
+
+/* 注音符號專用 */
+@font-face {
+  font-family: haoye-font;      /* 同樣的 font-family */
+  unicode-range: U+3100-312F;     /* Bopomofo */
+  src: local(LiHei Pro),          /* OS X */
+       local("微軟正黑體"); /* Windows Vista+ */
+}
+
+/* 日文假名專用 */
+@font-face {
+  font-family: haoye-font;            /* 同樣的 font-family */
+  unicode-range: U+3040-30FF;           /* Hiragana, Katakana */
+  src: local(Hiragino Kaku Gothic Pro), /* OS X */
+       local(Meiryo);                   /* Windows Vista+ */
+}
+
+
+$base-font-family: haoye-font, nstc-font, sans-serif;
 
 .style-font {
 	font-family: $base-font-family;
-	font-weight: 100;
 }
